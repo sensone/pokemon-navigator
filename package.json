@@ -1,0 +1,23 @@
+{
+  "name": "pokemon-navigator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sensone/pokemon-navigator.git"
+  },
+  "keywords": [
+    "pokemon",
+    "go"
+  ],
+  "author": "Evgeni Korsunov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sensone/pokemon-navigator/issues"
+  },
+  "homepage": "https://github.com/sensone/pokemon-navigator#readme"
+}
