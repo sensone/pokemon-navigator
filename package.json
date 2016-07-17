@@ -2,10 +2,7 @@
   "name": "pokemon-navigator",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "webpack.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sensone/pokemon-navigator.git"
@@ -23,8 +20,11 @@
   "dependencies": {
     "axios": "^0.13.1",
     "react": "^15.2.1",
+    "react-bootstrap": "^0.29.5",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
+    "react-router-redux": "^4.0.5",
     "react-templates": "^0.5.2",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
@@ -43,5 +43,9 @@
     "babel-preset-stage-0": "^6.5.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot --history-api-fallback",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
