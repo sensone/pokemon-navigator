@@ -1,0 +1,18 @@
+<rt-import name="Link" from="react-router" />
+
+<div class="main-menu">
+  <div
+    onClick="()=>this.toggleOpen()"
+    class="main-menu__button glyphicon glyphicon-menu-hamburger {this.state.open ? 'active' : ''}"
+  />
+  <nav class="main-menu__list" rt-if="this.state.open">
+    <Link
+      rt-repeat="page in this.state.pages"
+      class="main-menu__list-item {this.props.route.pathname === page.url ? 'active' : ''}"
+      onClick="()=>this.toggleOpen()"
+      to="{page.url}"
+      key={page.name}>
+      {page.name}
+    </Link>
+  </nav>
+</div>

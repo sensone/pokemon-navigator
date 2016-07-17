@@ -1,0 +1,6 @@
+<rt-import name="default" as="MainMenu" from="../elements/MainMenu.js" />
+
+<header class="header">
+  <MainMenu />
+  It's header
+</header>
