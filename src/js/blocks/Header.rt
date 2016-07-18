@@ -1,6 +1,39 @@
-<rt-import name="default" as="MainMenu" from="../elements/MainMenu.js" />
+<rt-import name="default" as="Navbar" from="react-bootstrap/lib/Navbar" />
+<rt-import name="default" as="NavItem" from="react-bootstrap/lib/NavItem" />
+<rt-import name="default" as="NavDropdown" from="react-bootstrap/lib/NavDropdown" />
+<rt-import name="default" as="MenuItem" from="react-bootstrap/lib/MenuItem" />
+<rt-import name="default" as="Nav" from="react-bootstrap/lib/Nav" />
+<rt-import name="Link" from="react-router" />
 
 <header class="header">
-  <MainMenu />
-  It's header
+  <Navbar inverse>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="/">Pokemon navigator</a>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <Nav>
+        <NavItem eventKey={1} componentClass={Link} to="/foo" href="/foo">Comparing</NavItem>
+        <NavDropdown eventKey={3} title="Filter" id="basic-nav-dropdown">
+          <MenuItem eventKey={3.1}>Action</MenuItem>
+          <MenuItem eventKey={3.2}>Another action</MenuItem>
+          <MenuItem eventKey={3.3}>Something else here</MenuItem>
+          <MenuItem divider />
+          <MenuItem eventKey={3.3}>Separated link</MenuItem>
+        </NavDropdown>
+      </Nav>
+      <Nav pullRight>
+        <NavItem
+          componentClass={Link}
+          rt-repeat="page in this.state.pages"
+          to="{page.url}"
+          href="{page.url}"
+          key={page.name}>
+          {page.name}
+        </NavItem>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
 </header>

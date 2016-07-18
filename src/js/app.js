@@ -26,8 +26,8 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Bar}/>
-        <Route path="foo" component={Foo}/>
-        <Route path="bar" component={Bar}/>
+        <Route path="articles" component={Foo}/>
+        <Route path="pokemons-list" component={Bar}/>
       </Route>
     </Router>
   </Provider>,
