@@ -5,6 +5,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import App from './components/App';
+import PokemonsListPage from './components/PokemonsListPage';
 
 import store from './store';
 
@@ -27,7 +28,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={Bar}/>
         <Route path="articles" component={Foo}/>
-        <Route path="pokemons-list" component={Bar}/>
+        <Route path="pokemons-list" component={PokemonsListPage}/>
       </Route>
     </Router>
   </Provider>,

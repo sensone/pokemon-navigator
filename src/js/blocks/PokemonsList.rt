@@ -1,0 +1,42 @@
+<rt-import name="default" as="Image" from="react-bootstrap/lib/Image" />
+<rt-import name="default" as="Media" from="react-bootstrap/lib/Media" />
+<rt-import name="default" as="Badge" from="react-bootstrap/lib/Badge" />
+<rt-import name="default" as="PageHeader" from="react-bootstrap/lib/PageHeader" />
+
+
+<div class="pokemons-list">
+  <PageHeader>Pokemons</PageHeader>
+  <Media class="pokemons-list__item" rt-repeat="pokemon in this.props.pokemons" key={pokemon._id}>
+    <Media.Left align="middle">
+      <img width={80} height={80} src="../../assets/images/pokemons/{pokemon.id}.png" alt="Image"/>
+    </Media.Left>
+    <Media.Body>
+      <Media.Heading>{pokemon.name}</Media.Heading>
+
+      Weight: <Badge>{pokemon.weight}</Badge>
+      Height: <Badge>{pokemon.height}</Badge>
+      <br />
+
+      Type: <span
+        rt-repeat="type in pokemon.type"
+      >
+        {type}
+      </span>
+      <br />
+
+      Abilities: <span
+        rt-repeat="abilitie in pokemon.abilities"
+      >
+        {abilitie}
+      </span>
+      <br />
+
+      Weakness: <span
+        rt-repeat="weakness in pokemon.weakness"
+      >
+        {weakness}
+      </span>
+
+    </Media.Body>
+  </Media>
+</div>

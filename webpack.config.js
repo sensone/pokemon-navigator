@@ -4,9 +4,9 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
+  context: path.join(__dirname),
   devtool: debug ? 'inline-sourcemap' : null,
-  entry: "./js/app.js",
+  entry: "./src/js/app.js",
   module: {
     loaders: [
       {
@@ -22,16 +22,25 @@ module.exports = {
         test: /\.rt$/,
         loaders: ['babel-loader?presets[]=es2015', 'react-templates-loader?modules=es6']
       },
-      { test: /\.less$/, loader: "style-loader!css-loader!less-loader" }
+      { test: /\.less$/, loader: "style-loader!css-loader!less-loader" },
+      { test: /\.png$/i, loader:'file?name=[path][name].[ext]'},
     ]
   },
   output: {
-    path: __dirname + "/src/",
-    filename: "app.min.js"
+    path: __dirname + "/",
+    filename: "app.min.js",
+    publicPath: '/'
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: true }),
   ],
+  devServer: {
+    host: 'localhost',
+    port: 3000,
+    proxy: {
+      '/get-pokemons' : '../api/data.json',
+    }
+  }
 };
