@@ -1,0 +1,11 @@
+<footer class="footer {this.state.open ? '' : 'collapsed'}">
+  <div class="container">
+    <div
+      class="footer__toggle"
+      onClick="()=>this.toggle()"
+    >
+      <span class="footer__toggle-icon glyphicon glyphicon-menu-{this.state.open ? 'down' : 'up'}"/>
+    </div>
+    <p class="text-muted">It's footer</p>
+  </div>
+</footer>
