@@ -2,10 +2,14 @@
 <rt-import name="default" as="Media" from="react-bootstrap/lib/Media" />
 <rt-import name="default" as="Badge" from="react-bootstrap/lib/Badge" />
 <rt-import name="default" as="PageHeader" from="react-bootstrap/lib/PageHeader" />
+<rt-import name="default" as="Button" from="react-bootstrap/lib/Button" />
+<rt-import name="default" as="FilterButton" from="../elements/FilterButton.js" />
 
-
-<div class="pokemons-list">
-  <PageHeader>Pokemons</PageHeader>
+<section class="pokemons-list">
+  <PageHeader>
+    Pokemons
+    <FilterButton showFilter={this.props.showFilter} />
+  </PageHeader>
   <Media class="pokemons-list__item" rt-repeat="pokemon in this.props.pokemons" key={pokemon._id}>
     <Media.Left align="middle">
       <img width={80} height={80} src="../../assets/images/pokemons/{pokemon.id}.png" alt="Image"/>
@@ -39,4 +43,4 @@
 
     </Media.Body>
   </Media>
-</div>
+</section>

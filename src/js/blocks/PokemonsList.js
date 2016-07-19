@@ -10,7 +10,8 @@ import { fetchPokemons } from '../actions/pokemonsActions';
     pokemons: store.pokemons.pokemons,
     fetching: store.pokemons.fetching,
     fetched: store.pokemons.fetched,
-    error: store.pokemons.error
+    error: store.pokemons.error,
+    showFilter: store.pokemons.filter.show
   };
 })
 

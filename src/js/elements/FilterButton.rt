@@ -1,0 +1,7 @@
+<rt-import name="default" as="Button" from="react-bootstrap/lib/Button" />
+
+<Button
+  onClick="()=>this.toggle()"
+  bsStyle="{this.props.showFilter ? 'warning' : 'info'}"
+  class="filter-button glyphicon glyphicon-filter pull-right"
+/>

@@ -1,0 +1,5 @@
+<rt-import name="default" as="PageHeader" from="react-bootstrap/lib/PageHeader" />
+
+<section class="pokemons-filter">
+  filter
+</section>

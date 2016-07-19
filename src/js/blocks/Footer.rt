@@ -1,11 +1,13 @@
-<footer class="footer {this.state.open ? '' : 'collapsed'}">
+<rt-import name="default" as="PokemonsFilter" from="../blocks/PokemonsFilter.js" />
+
+<footer class="footer {this.props.showFilter ? '' : 'collapsed'}">
   <div class="container">
     <div
       class="footer__toggle"
       onClick="()=>this.toggle()"
     >
-      <span class="footer__toggle-icon glyphicon glyphicon-menu-{this.state.open ? 'down' : 'up'}"/>
+      <span class="footer__toggle-icon glyphicon glyphicon-menu-{this.props.showFilter ? 'down' : 'up'}"/>
     </div>
-    <p class="text-muted">It's footer</p>
+    <PokemonsFilter />
   </div>
 </footer>
