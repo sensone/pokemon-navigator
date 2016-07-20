@@ -23,6 +23,7 @@
 
       Type: <span
         rt-repeat="type in pokemon.type"
+        key={typeIndex}
       >
         {type}
       </span>
@@ -30,6 +31,8 @@
 
       Abilities: <span
         rt-repeat="abilitie in pokemon.abilities"
+        key={abilitieIndex}
+
       >
         {abilitie}
       </span>
@@ -37,6 +40,7 @@
 
       Weakness: <span
         rt-repeat="weakness in pokemon.weakness"
+        key={weaknessIndex}
       >
         {weakness}
       </span>
